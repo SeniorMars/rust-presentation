@@ -13,6 +13,8 @@ extensions:
   - The first prealpha release of Rust occurred in Janurary 2012.
   - Hoare stopped working on the project in 2012 due to burnout.
   - Rust 1.0 was released on May 15, 2015.
+
+![4](https://www.itechart.com/media/images/logo-06.original.png)
   
 ---
 
