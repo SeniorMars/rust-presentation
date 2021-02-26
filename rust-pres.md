@@ -1,7 +1,7 @@
 ---
 title: Introduction to Rust
 author: Fe Crabs
-date: 2021-02-24
+date: 2021-02-26
 extensions:
   - image_ueberzug
 ---
@@ -9,7 +9,7 @@ extensions:
 # History of Rust
   - Rust was a personal project that began in 2006 by Mozilla employee Graydon Hoare.
   - C++ was difficult to write in
-  - Rust was intended to be a language for highly concurrent and safe systems. Features included things like
+  - Rust was intended to be a language for highly concurrent and safe systems.
   - The first prealpha release of Rust occurred in Janurary 2012.
   - Graydon Hoare stopped working on the project in 2012 due to burnout.
   - Rust 1.0 was released on May 15, 2015.
@@ -52,8 +52,9 @@ extensions:
 
 # What you can use Rust for:
   - Writing system software
-  - Rust can be used for creating web projects (ie. Dropbox, OpenDNS, Coursera, Discord)
-  - Because it is high performance, games.
+  - Web projects (ie. Dropbox, OpenDNS, Coursera, Discord)
+  - Games (high performance)
+  - Machine learning (low-level memory control and performance)
   - In the future using Rust for machine learning looks good, because of its low-level memory control and performance.
 
 ---
@@ -63,4 +64,3 @@ extensions:
   - Language is difficult for people coming from other languages.
   - Code is a lot harder to develop than on c or c++
   - No garbage collector, which isn't for everyone
-
