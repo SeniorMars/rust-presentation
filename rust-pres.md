@@ -14,6 +14,7 @@ extensions:
   - Hoare stopped working on the project in 2012 due to burnout.
   - Rust 1.0 was released on May 15, 2015.
 
+![4](https://www.itechart.com/media/images/logo-06.original.png)
   
 ---
 
@@ -54,13 +55,15 @@ extensions:
 # What you can use Rust for:
   - Writing system software
   - Web projects (ie. Dropbox, OpenDNS, Coursera, Discord)
-  - Games (high performance)
+  - Games (theoretically)
+  - Networking due to security and reliability
   - Machine learning (low-level memory control and performance)
 
 ---
 
 # Why you shouldn't use Rust
   - Compiler is very slow due to many features
+  - APIs are changing frequently due to how new Rust is.
   - Language is difficult for people coming from other languages
   - Code is a lot harder to develop than on c or c++
   - No garbage collector, which isn't for everyone
