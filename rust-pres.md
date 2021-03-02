@@ -6,20 +6,14 @@ extensions:
   - image_ueberzug
 ---
 
-# Title: Introduction to Rust
-
-# Author: Fe Crabs
-
-![20](images/rustdocs.png)
-
+![16](images/title.png)
 ---
-
 # History of Rust
   - Rust was a personal project that began in 2006 by Mozilla employee Graydon Hoare.
-  - C++ was difficult to write in
+  - C++ was difficult to write in.
   - Rust was intended to be a language for highly concurrent and safe systems.
+  - Mozilla began to sponsor the project in 2009.
   - The first prealpha release of Rust occurred in Janurary 2012.
-  - Hoare stopped working on the project in 2012 due to burnout.
   - Rust 1.0 was released on May 15, 2015.
 ![16](images/ifz2rkk8ugw51.png)
 
@@ -28,10 +22,10 @@ extensions:
 # What is Rust?
   - Systems language
   - Statically-type multi paradigm language (functional, OOP, imperative etc.)
-  - Focus on Performance, Reliability, and Productivity -> Memory
+  - Focus on Performance, Reliability, and Productivity
   - Safe!
   - Stack Overflow's most loved language
-
+![16](images/theydontknow.jpg)
 ---
 
 # Terms to know
@@ -66,7 +60,7 @@ extensions:
     - Each value in Rust has a variable that’s called its owner.
     - There can only be one owner at a time.
     - When the owner goes out of scope, the value will be dropped.
-
+![16](images/unsafe.png)
 ---
 
 # Features
@@ -82,7 +76,7 @@ extensions:
   - Games (theoretically)
   - Networking due to security and reliability
   - Machine learning (low-level memory control and performance)
-
+![16](images/useit.png)
 ---
 
 # Why you shouldn't use Rust
@@ -91,3 +85,4 @@ extensions:
   - Language is difficult for people coming from other languages
   - Code is a lot harder to develop than on c or c++
   - No garbage collector, which isn't for everyone
+![16](images/kidnap.png)
