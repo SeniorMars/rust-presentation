@@ -13,14 +13,13 @@ extensions:
   - The first prealpha release of Rust occurred in Janurary 2012.
   - Hoare stopped working on the project in 2012 due to burnout.
   - Rust 1.0 was released on May 15, 2015.
+![16](images/ifz2rkk8ugw51.png)
 
-![4](https://www.itechart.com/media/images/logo-06.original.png)
-  
 ---
 
 # What is Rust?
   - Systems language
-  - Statically-type multi paradigm (functional, OOP, imperative etc.)
+  - Statically-type multi paradigm language (functional, OOP, imperative etc.)
   - Stack Overflow's most loved language
   - Focus on Performance, Reliability, and Productivity -> Memory
   - SAFE
@@ -29,27 +28,44 @@ extensions:
 
 # Terms to know
 
-| Word              | Definition                                                             |
-|-------------------|------------------------------------------------------------------------|
-| Pointer           | Variable that stores the address of another variable                   |
-| Free              | Function that clears memory allocated to a variable                    |
-| Garbage Collector | A feature in PLs that automatically frees memory not needed in Runtime |
-| &                 | Operation to view a memory address of a variable                       |
+| Word                    | Definition                                                             |
+|-------------------------|------------------------------------------------------------------------|
+| Pointer                 | Variable that stores the address of another variable                   |
+| Free                    | Function that clears memory allocated to a variable                    |
+| Garbage Collector       | A feature in PLs that automatically frees memory not needed in Runtime |
+| &                       | Operation to view a memory address of a variable                       |
+| UB (Undefined Behavior) | When a program runs unexpectedly                                       |
+
+---
+
+# Some Syntax Sugar
+
+| Type  | Meaning                                             |
+|-------|-----------------------------------------------------|
+| i32   | Signed integer with 32 bit                          |
+| u32   | Unsigned integer with 32 bit                        |
+| f32   | Double with 32 bytes                                |
+| usize | Uses your computer architecture's to determine size |
+| char  | UTF-8 - 4 bytes                                     |
+| &str  | Slice (String Literal)                              |
 
 ---
 
 # Memory Safety
   - A language that can check for errors before runtime
   - Almost no safer operations
-  - Ownership (slices, pointers, borrowing)
-  
+  - Ownership (slices, pointers, borrowing):
+    - Each value in Rust has a variable that’s called its owner.
+    - There can only be one owner at a time.
+    - When the owner goes out of scope, the value will be dropped.
+
 ---
 
 # Features
   - Compiler Messages
   - Great libraries
   - Toolchain
-  
+
 ---
 
 # What you can use Rust for:
