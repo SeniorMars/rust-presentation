@@ -6,6 +6,14 @@ extensions:
   - image_ueberzug
 ---
 
+# Title: Introduction to Rust
+
+# Author: Fe Crabs
+
+![20](images/rustdocs.png)
+
+---
+
 # History of Rust
   - Rust was a personal project that began in 2006 by Mozilla employee Graydon Hoare.
   - C++ was difficult to write in
