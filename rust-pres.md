@@ -20,9 +20,9 @@ extensions:
 # What is Rust?
   - Systems language
   - Statically-type multi paradigm language (functional, OOP, imperative etc.)
-  - Stack Overflow's most loved language
   - Focus on Performance, Reliability, and Productivity -> Memory
-  - SAFE
+  - Safe!
+  - Stack Overflow's most loved language
 
 ---
 
