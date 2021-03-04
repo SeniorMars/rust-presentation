@@ -1,7 +1,7 @@
 ---
 title: Introduction to Rust
 author: Fe Crabs
-date: 2021-03-03
+date: 2021-03-04
 extensions:
   - image_ueberzug
 ---
@@ -11,11 +11,12 @@ extensions:
 ---
 # History of Rust
   - Rust was a personal project that began in 2006 by Mozilla employee Graydon Hoare.
-  - C++ was difficult to write in.
+  - Hoare did not like how C++ handled concurrent code
   - Rust was intended to be a language for highly concurrent and safe systems.
   - Mozilla began to sponsor the project in 2009.
-  - The first prealpha release of Rust occurred in Janurary 2012.
+  - The first prealpha release of Rust occurred in January 2012.
   - Rust 1.0 was released on May 15, 2015.
+  - Rust Foundation was created in 2021 by Amazon, Microsoft, Google, Huawei, and Mozilla
   
 ![16](images/ifz2rkk8ugw51.png)
 
@@ -23,10 +24,10 @@ extensions:
 
 # What is Rust?
   - Systems language
-  - Statically-type multi paradigm language (functional, OOP, imperative etc.)
+  - Statically-type multi paradigm language (functional, Structured, imperative etc.)
   - Focus on Performance, Reliability, and Productivity
+  - Stack Overflow's most loved language for five years
   - Safe!
-  - Stack Overflow's most loved language
   
 ![16](images/theydontknow.jpg)
 
@@ -57,8 +58,8 @@ extensions:
 | &str  | Slice (String Literal)                              |
 
 ```rust
-// Variables - Rust gueses the type of your variable most of the time
-let s = "Löwe 老虎 Léopard";
+// Variables - Rust guesses the type of your variable most of the time
+let s = "Löwe 老虎 Léopard 😳😩";
 
 // But you can also tell rust the exact type you expect.
 let x: i32 = 10;
@@ -66,7 +67,7 @@ let x: i32 = 10;
 // Rust also has tuples
 let pair: (usize, f64) = (176, 87.123);
 
-// Arrays which are non-dynamic
+// Arrays with a fixed size
 let arr: [i32;5] = [1, 2, 3, 4, 5];
 
 // Dynamic Arrays - think ArrayList
@@ -74,12 +75,12 @@ let vec: Vec = vec![1, 2, 3];
 ```
 
 ---
-
 # More Goodies
 
 ```rust
 // Functions
 fn fibonacci(n: u32) -> u32 {
+    // switch case -> expression matching
     match n {
         0 => 1,
         1 => 1,
@@ -88,6 +89,7 @@ fn fibonacci(n: u32) -> u32 {
 }
 
 fn main() {
+    // fizzbuzz
     let bank: [&str; 3] = ["FizzBuzz", "Buzz", "Fizz"];
     for i in 1..101 {
         let result = if i % 15 == 0 {
@@ -124,34 +126,61 @@ enum FuelType {
  Electric(String),
 }
 
-// Think interfaces or c declarations in headers
+// Adding functions to struct
+// let honda = Car::new();
+impl Car {
+  fn new(
+      registration_number: String,
+      number_of_passengers: u8,
+      price: f32,
+      fuel_type: FuelType,
+  ) -> Self {
+      Self {
+          registration_number,
+          number_of_passengers,
+          price,
+          fuel_type,
+      }
+  }
+}
+
+// Think Java's interfaces or c declarations in headers
 trait EnvReg {
  fn fuel_efficiency_check(&self, fuel_consumption: f32) -> bool;
  fn co2_emission_check(&self, co2_emission: u8) -> bool;
 }
 
+impl EnvReg for Car {
+ // Implement these functions for Car 
+ fn fuel_efficiency_check(&self, fuel_consumption: f32) -> bool {
+    // ...
+ }
+ fn co2_emission_check(&self, co2_emission: u8) -> bool {
+    // ...
+ }
+}
+// code comment
 ```
 
 ---
 
 # Introduction to Rust - points to emphasize
   - Writing good code is hard
-  - Writing safe coder is harder
+  - Writing safe code is harder
   - Working with memory is dangerous
   
 ![16](images/unsafe.png)
   
 ---
 
-# Example
+# Example Written in C
 ```c
 
 #include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
-// There are at least 7 bugs relating to memory on this snippet.
-// Find them all!
 
+// C Implementation for a vector (a dynamic array)
 typedef struct {
   int *data;    // Pointer to our array on the heap
   int length;   // How many elements are in our array
@@ -276,7 +305,7 @@ fn first() {
     // Make a regex
     let re = Regex::new(r"^(\d+)-(\d+) (\S): (\S+)").unwrap();
     for policy in lines {
-        // Automatically capture the regex from capture groups
+        // regex from capture groups
         for group in re.captures_iter(&policy) {
             let count = &group[4]
                 .chars()
@@ -310,8 +339,8 @@ fn first() {
 # Why you shouldn't use Rust
   - Compiler is very slow due to many features
   - APIs are changing in libraries frequently due to how new they are
-  - Language is difficult for people coming from other languages (learning curve)
-  - Code is a lot harder to develop than on c or c++
+  - Language is difficult for people coming from other languages 
+  - Code is a lot harder to develop than on c or c++ (higher learning curve)
   - No garbage collector, which isn't for everyone
   
 ![16](images/kidnap.png)
@@ -332,9 +361,10 @@ fn first() {
   - Google
   - Mozilla
   - Huawei
+  - Amazon
   - Soon anywhere where networking is a concern
 
-## How this was made (Soruces)
+## How this was made (Sources)
   - https://github.com/d0c-s4vage/lookatme
   - https://hackernoon.com/programming-in-rust-the-good-the-bad-the-ugly-d06f8d8b7738
   - https://aws.amazon.com/blogs/opensource/aws-sponsorship-of-the-rust-project/
