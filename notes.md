@@ -15,6 +15,31 @@ or something like that woo
 - it even suggests a correction!!!!
 
 #### Toolchain
-- A toolchain is 
+- Rust's build system is CARGO (rest of this section is integrated into cargo
+- Crates (libraries) can be installed
+- Unit Tests - integrated running of tests that you make on your code
+- Benchmarking 
+- // is a code comment
+- /// is a documentation comment
+- cargo can generate documentation from ^ (command is cargo doc w/ flags)
+- clippy (linter)
 
-#### great libraries: community makes a ton of libraries (web frameworks, game, etc) 
+- Rustup - installer script
+- rustfmt - formatter
+
+- Main point: Consistent environment (compatibility!!) 
+
+
+#### great libraries: community makes a ton of libraries for whatever you want
+- some highlights:
+- wasm-pack: easily generates webassembly code from rust
+- rust has an amazing regex library 
+
+- here's some example code by karl using the regex library 
+
+#### What you can use rust for
+- literally read out the slide
+- Mention bevy for games
+
+#### Why you shouldn't use rust
+- yep.
