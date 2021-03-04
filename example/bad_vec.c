@@ -18,6 +18,11 @@ Vec *vec_new() {
   return &vec;
 }
 
+void vec_free(Vec *vec) {
+  free(vec);
+  free(vec->data);
+}
+
 void vec_push(Vec *vec, int n) {
   if (vec->length == vec->capacity) {
     int new_capacity = vec->capacity * 2;
@@ -36,10 +41,6 @@ void vec_push(Vec *vec, int n) {
   ++vec->length;
 }
 
-void vec_free(Vec *vec) {
-  free(vec);
-  free(vec->data);
-}
 
 void main() {
   Vec *vec = vec_new();
