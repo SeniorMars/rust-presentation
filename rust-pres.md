@@ -12,7 +12,7 @@ extensions:
 # History of Rust
   - Rust was a personal project that began in 2006 by Mozilla employee Graydon Hoare.
   - Hoare did not like how C++ handled concurrent code
-  - Rust was intended to be a language for highly concurrent and safe systems.
+  - Rust was intended to be a language for safe systems.
   - Mozilla began to sponsor the project in 2009.
   - The first prealpha release of Rust occurred in January 2012.
   - Rust 1.0 was released on May 15, 2015.
@@ -27,7 +27,6 @@ extensions:
   - Statically-type multi paradigm language (functional, Structured, imperative etc.)
   - Focus on Performance, Reliability, and Productivity
   - Stack Overflow's most loved language for five years
-  - Safe!
   
 ![16](images/theydontknow.jpg)
 
@@ -111,7 +110,8 @@ fn main() {
 ```rust
 // Rust is not an OOP Language, but..
 struct Car {
- registration_number : String,
+ // variable_name: type
+ registration_number: String,
  number_of_passengers: u8,
  price: f32,
  fuel_type: FuelType,
@@ -127,7 +127,7 @@ enum FuelType {
 }
 
 // Adding functions to struct
-// let honda = Car::new();
+// let honda = Car::new(parameters);
 impl Car {
   fn new(
       registration_number: String,
@@ -159,7 +159,6 @@ impl EnvReg for Car {
     // ...
  }
 }
-// code comment
 ```
 
 ---
@@ -242,7 +241,53 @@ void main() {
     > 
     > When the owner goes out of scope, the value will be dropped.
   - Borrow checker
-  - Zero-Cost Abstractions
+
+  
+--- 
+
+# Zero-Cost Abstractions
+  - Why not have cool features
+  - No overhead
+  - Compiler optimizations
+  - Three different versions
+  - https://godbolt.org/z/_h-meM
+
+
+```rust
+// Simple implmentation that is generic enough
+pub fn sum(n: i32) -> i32 {
+    let mut sum = 0;
+    for i in 1..n {
+      sum += i;
+    }
+    sum
+}
+
+// Implementation with rust closures (lambda functions)
+pub fn sum2(n: i32) -> i32 {
+   (1..n).fold(0, |x,y| x + y)
+}
+
+// The ideal way
+pub fn sum3(n: i32) -> i32 { (1..n).sum()
+}
+
+```
+
+```asm
+example::sum2:
+        xor     eax, eax
+        cmp     edi, 2
+        jl      .LBB0_2
+        lea     eax, [rdi - 2]
+        lea     ecx, [rdi - 3]
+        imul    rcx, rax
+        shr     rcx
+        lea     eax, [rcx + 2*rdi]
+        add     eax, -3
+.LBB0_2:
+        ret
+```
   
 
 ---
@@ -264,7 +309,7 @@ fn main() {
 }
 ```
 
-![10](images/2021-03-03_22-26.png)
+![9](images/2021-03-03_22-26.png)
 
 ---
 
@@ -324,11 +369,10 @@ fn first() {
 
 ---
 
-
 # What you can use Rust for:
   - Writing system software
   - Web projects (ie. Dropbox, OpenDNS, Coursera, Discord)
-  - Games (theoretically)
+  - Games (lack of garbage collector)
   - Networking due to security and reliability
   - Machine learning (low-level memory control and performance)
 
@@ -341,7 +385,6 @@ fn first() {
   - APIs are changing in libraries frequently due to how new they are
   - Language is difficult for people coming from other languages 
   - Code is a lot harder to develop than on c or c++ (higher learning curve)
-  - No garbage collector, which isn't for everyone
   
 ![16](images/kidnap.png)
 
@@ -370,3 +413,4 @@ fn first() {
   - https://aws.amazon.com/blogs/opensource/aws-sponsorship-of-the-rust-project/
   - Karl.SeniorMars (Trust me bro)
   - https://thefuntastic.com/blog/why-rust-is-the-future-game-dev
+  - https://idursun.com/posts/rust_zero_cost_abstractions_in_action/
