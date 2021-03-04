@@ -51,7 +51,7 @@ extensions:
 |-------|-----------------------------------------------------|
 | i32   | Signed integer with 32 bits                         |
 | u32   | Unsigned integer with 32 bits                       |
-| f32   | Double with 32 bites                                |
+| f32   | Double with 32 bits                                |
 | usize | Uses your computer architecture's to determine size |
 | char  | UTF-8 - 4 **bytes**                                 |
 | &str  | Slice (String Literal)                              |
@@ -172,7 +172,7 @@ impl EnvReg for Car {
   
 ---
 
-# Example Written in C
+# Purposely Badly Example Written in C
 ```c
 
 #include <assert.h>
@@ -309,7 +309,7 @@ fn main() {
 }
 ```
 
-![9](images/2021-03-03_22-26.png)
+![10](images/2021-03-03_22-26.png)
 
 ---
 
