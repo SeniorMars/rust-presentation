@@ -40,6 +40,7 @@ or something like that woo
 #### What you can use rust for
 - literally read out the slide
 - Mention bevy for games
+- GAME EXAMPLE: For games like minecraft that have to use the java garbage collector, there's noticeable lag spikes when it kicks in.
 
 #### Why you shouldn't use rust
 - yep.
