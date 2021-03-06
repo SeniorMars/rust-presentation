@@ -38,7 +38,7 @@ extensions:
 | Pointer                 | Variable that stores the address of another variable                         |
 | Free                    | Function that clears memory allocated to a variable                          |
 | Garbage Collector       | A feature in languages that automatically frees memory not needed in runtime |
-| &                       | Operation to view a memory address of a variable                             |
+| &                       | In C operation to view a memory address of a variable, in Rust a reference   |
 | UB (Undefined Behavior) | When a program runs unexpectedly                                             |
 
 ![14](images/heap.jpg)
@@ -51,7 +51,7 @@ extensions:
 |-------|-----------------------------------------------------|
 | i32   | Signed integer with 32 bits                         |
 | u32   | Unsigned integer with 32 bits                       |
-| f32   | Double with 32 bits                                |
+| f32   | Double with 32 bits                                 |
 | usize | Uses your computer architecture's to determine size |
 | char  | UTF-8 - 4 **bytes**                                 |
 | &str  | Slice (String Literal)                              |
@@ -66,10 +66,10 @@ let x: i32 = 10;
 // Rust also has tuples
 let pair: (usize, f64) = (176, 87.123);
 
-// Arrays with a fixed size
+// Arrays that a known size at compile times
 let arr: [i32;5] = [1, 2, 3, 4, 5];
 
-// Dynamic Arrays - think ArrayList
+// Rust has ArrayList but they are known as vectors
 let vec: Vec = vec![1, 2, 3];
 ```
 
@@ -127,7 +127,7 @@ enum FuelType {
 }
 
 // Adding functions to struct
-// let honda = Car::new(parameters);
+// let honda: Car = Car::new(parameters);
 impl Car {
   fn new(
       registration_number: String,
@@ -172,7 +172,7 @@ impl EnvReg for Car {
   
 ---
 
-# Purposely Badly Example Written in C
+# Purposely Badly Written Example in C
 ```c
 
 #include <assert.h>
@@ -289,7 +289,6 @@ example::sum2:
         ret
 ```
   
-
 ---
 
 # Compiler Messages Are Amazing
@@ -323,7 +322,8 @@ fn main() {
     - Clippy - linter
   - Rustup
   - Rustfmt 
-  - Everyone runs the same environment
+  - Rust-analyzer
+  - Everyone runs the same tools unlike other languages
 
 ![10](images/rustdocs.png)
 
