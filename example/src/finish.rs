@@ -1,12 +1,13 @@
 use std::fmt;
+
 struct Node {
     data: char,
-    node: Option<Box<Node>>,
+    next: Option<Box<Node>>,
 }
 
 impl Node {
-    fn new(data: char, node: Option<Box<Node>>) -> Self {
-        Self { data, node }
+    pub fn new(data: char, next: Option<Box<Node>>) -> Node {
+        Node { data, next }
     }
 }
 
@@ -15,11 +16,11 @@ struct Stack {
 }
 
 impl Stack {
-    fn new() -> Self {
-        Self { head: None }
+    pub fn new() -> Stack {
+        Stack { head: None }
     }
 
-    fn push(&mut self, data: char) {
+    pub fn push(&mut self, data: char) {
         let new_node = Box::new(Node::new(data, self.head.take()));
         self.head = Some(new_node);
     }
@@ -33,7 +34,7 @@ impl fmt::Display for Stack {
             match current {
                 Some(node) => {
                     result = format!("{} {}", result, node.data);
-                    current = &node.node;
+                    current = &node.next;
                 }
                 None => break,
             }
@@ -44,12 +45,9 @@ impl fmt::Display for Stack {
 
 fn main() {
     let mut list: Stack = Stack::new();
-    let world: [char; 5] = ['o', 'l', 'l', 'e', 'h'];
+    let world: [char; 11] = ['d', 'l', 'r', 'o', 'W', ' ', 'o', 'l', 'l', 'e', 'H'];
     for chr in world.iter() {
         list.push(*chr)
     }
-    println!("{}", list);
-    // std:smart_ptr
-    // let x = Box::new(10);
-    // println!("{}", *x)
+    print! {"{}", list}
 }
