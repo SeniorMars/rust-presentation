@@ -1,7 +1,7 @@
 ---
 title: Introduction to Rust
 author: Fe Crabs
-date: 2021-03-04
+date: 2021-03-10
 extensions:
   - image_ueberzug
 ---
@@ -38,7 +38,7 @@ extensions:
 | Pointer                 | Variable that stores the address of another variable                            |
 | Free                    | Function that clears memory allocated to a variable                             |
 | Garbage Collector       | A feature in languages that automatically frees memory not needed in runtime    |
-| &                       | In C, a operation to view a memory address of a variable. In Rust, a reference |
+| &                       | In C, a operation to view a memory address of a variable. In Rust, a reference  |
 | UB (Undefined Behavior) | When a program runs unexpectedly                                                |
 
 ![14](images/heap.jpg)
@@ -66,7 +66,7 @@ let x: i32 = 10;
 // Rust also has tuples
 let pair: (usize, f64) = (176, 87.123);
 
-// Arrays that a known size at compile times
+// Arrays that have a known size at compile times
 let arr: [i32;5] = [1, 2, 3, 4, 5];
 
 // Rust has ArrayList but they are known as vectors
@@ -245,10 +245,9 @@ void main() {
 
 # Essential Features
   - A language that can check for errors before runtime
-  - As part of its design, immutatable by default
+  - As part of its design, immutable by default
   - Forces you to handle errors
   - Ownership and borrow-checker
-  - Lifetimes: constraints which scopes they may be moved out of
 
 ![16](images/errors.png)
 
@@ -293,10 +292,11 @@ fn main() {
 ---
 
 # Error Handling
-  - Through `result`, `?`, `unwrap`and `Option<T>`
- 
+  - Through `Result<>`, `?`, `unwrap`, `Option<T>`, and more!
+
 
 ```rust
+extern crate rand;
 use std::{
     fs::File,
     io::{self, BufWriter, Write},
@@ -368,7 +368,7 @@ pub fn sum3(n: i32) -> i32 {
 ```
 
 ```asm
-example::sum2:
+example::sum:
         xor     eax, eax
         cmp     edi, 2
         jl      .LBB0_2
@@ -420,10 +420,11 @@ macro_rules! vec {
 }
 
 fn main() {
+    // like a function call
     let x: Vec = vec![10, 5, 1];
 }
 ```
-  
+
 ## Procedural
 ```rust
 // An attribute that calls a derive macro
@@ -449,18 +450,6 @@ impl NewsFeed {
         &self.category
     }
 }
-
-
-// There are also function-life macros
-use macro_derive::make_function;
-
-fn main() {
-    make_function!(fn double(usize) -> usize);
-    double(1); // 2
-    double(2); // 4
-    double(3); // 6
-}
-
 ```
 
 ---
@@ -588,3 +577,4 @@ fn first() {
   - Karl.SeniorMars (Trust me bro)
   - https://thefuntastic.com/blog/why-rust-is-the-future-game-dev
   - https://idursun.com/posts/rust_zero_cost_abstractions_in_action/
+  - https://willcrichton.net/notes/rust-memory-safety/
